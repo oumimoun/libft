@@ -14,20 +14,22 @@
 
 void *ft_memset(void *ptr, int value, size_t num) {
     char *byte_ptr = (char *)ptr;
-    size_t i = 0;
+    size_t i;
+
+    i = 0;
     while(i < num){
-        *byte_ptr = (char)value;
+        *byte_ptr = (unsigned char)value;
         i++;
         byte_ptr++;
     }
     return byte_ptr;
 }
 
-int main() {
+/*int main() {
     char buffer[50] = "GeeksForGeeks is for programming geeks.";
     ft_memset(buffer + 13, '.', 8);
 
     printf("Buffer contents: %s\n", buffer);
 
     return 0;
-}
+}*/

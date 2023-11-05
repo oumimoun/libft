@@ -14,7 +14,6 @@
 #include <stdlib.h>
 #include "libft.h"
 
-
 void *ft_calloc(size_t count, size_t size){
     void *p;
     size_t total;
@@ -22,7 +21,7 @@ void *ft_calloc(size_t count, size_t size){
     total = count * size;
     p = malloc(total);
 
-    if(p == NULL)
+    if(!p)
         return NULL;
     else
         ft_bzero(p, total);

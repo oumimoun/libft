@@ -12,14 +12,9 @@
 
 #include <stdio.h>
 
-void    ft_bzero(void *s, size_t n){
-    char *byte_s = (char *)s;
-    size_t i = 0;
-    while(i < n){
-        *byte_s = '0';
-        i++;
-        byte_s++;
-    }
+void    ft_bzero(void *s, size_t n)
+{
+    ft_memset(s, 0, n);
 }
 
 int main() {
