@@ -6,11 +6,10 @@
 /*   By: oumimoun <oumimoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 14:10:34 by oumimoun          #+#    #+#             */
-/*   Updated: 2023/11/04 14:39:28 by oumimoun         ###   ########.fr       */
+/*   Updated: 2023/11/05 19:18:02 by oumimoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 int	ft_atoi(char *str)
@@ -38,11 +37,11 @@ int	ft_atoi(char *str)
 	return (signe * total);
 }
 
-int main() {
-    char *str = "        12345dsvdsf21321fsd";
-    int value = ft_atoi(str);
+// int main() {
+//     char *str = "        12345dsvdsf21321fsd";
+//     int value = ft_atoi(str);
     
-    printf("The integer value is: %d\n", value);
+//     printf("The integer value is: %d\n", value);
 
-    return 0;
-}
+//     return 0;
+// }

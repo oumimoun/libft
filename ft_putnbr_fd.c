@@ -1,42 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oumimoun <oumimoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 11:30:15 by oumimoun          #+#    #+#             */
-/*   Updated: 2023/11/13 12:18:11 by oumimoun         ###   ########.fr       */
+/*   Created: 2023/11/13 11:53:00 by oumimoun          #+#    #+#             */
+/*   Updated: 2023/11/13 12:15:09 by oumimoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void * dest, const void * src, size_t n)
+static void	ft_putchar(char c,int fd)
 {
-	size_t		i;
-	char		*byte_dest;
-	char		*byte_src;
+	write(fd, &c, 1);
+}
 
-	if (!src && !dest)
-		return (NULL);
-	i = 0;
-	byte_dest = (char *)dest;
-	byte_src = (char *)src;
-	while (i < n)
+void ft_putnbr_fd(int n, int fd)
+{
+    unsigned int	i;
+
+	if (n < 0)
 	{
-		byte_dest[i] = byte_src[i];
-		i++;
+		write(fd, "-", 1);
+		n = n * -1;
 	}
-	return (byte_dest);
+	i = n;
+	if (i > 9)
+	{
+		ft_putnbr_fd((i / 10), fd);
+		ft_putchar((i % 10 + '0'), fd);
+	}
+	else
+	{
+		i = i + '0';
+		write(fd, &i, 1);
+	}
 }
 
-int main() {
-	 char src[] = "This is a test.";
-	 char dest[16];
-	 ft_memcpy(dest ,src , sizeof(src));
-
-	 printf("dest contents: %s\n", dest);
-
-	 return 0;
-}
+// int main()
+// {
+//     int d = open("test4.txt", O_WRONLY | O_CREAT, 0666);
+//     ft_putnbr_fd(12345, d);
+//     close(d);
+// }

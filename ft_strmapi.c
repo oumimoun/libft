@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oumimoun <oumimoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 12:21:08 by oumimoun          #+#    #+#             */
-/*   Updated: 2023/11/13 18:32:25 by oumimoun         ###   ########.fr       */
+/*   Created: 2023/11/12 13:45:05 by oumimoun          #+#    #+#             */
+/*   Updated: 2023/11/12 15:35:21 by oumimoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t len)
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-       
-}
-int main()
-{
-	// char dest[] = ft_memmove("oussama", "pp", 2);
-	// printf("|%s|", dest);
+	unsigned int i;
+	char *result;
+
+	i = 0;
+	if (!s || !f)
+		return (0);
+	result = malloc((ft_strlen(s) + 1) * (sizeof(char)));
+	if (!result)
+		return (0);
+	while (s[i])
+	{
+		result[i] = f(i, s[i]);
+		i++;
+	}
+	result[i] = '\0';
+	return (result);
 }

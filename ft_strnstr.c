@@ -6,61 +6,58 @@
 /*   By: oumimoun <oumimoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 10:58:22 by oumimoun          #+#    #+#             */
-/*   Updated: 2023/11/04 12:08:30 by oumimoun         ###   ########.fr       */
+/*   Updated: 2023/11/06 11:59:27 by oumimoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-int	ft_strlen(const char *str)
+int equal(const char *s1, const char *s2, size_t len)
 {
-	int	i;
+	int i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (*s1 && *s2 && len)
 	{
-		i++;
+		if (s1[i] != s2[i])
+			return (0);
+		s1++;
+		s2++;
+		len--;
 	}
-	return (i);
+	if (*s2 == '\0')
+		return (1);
+	return (0);
 }
 
-char *ft_strnstr(const char *haystack, const char *needle, size_t len){
-
-    size_t i = 0;
-    size_t j = 0;
-    size_t needle_len = ft_strlen(needle);
-
-    if (needle_len == 0) {
-        return (char *)haystack;
-    }
-    if (len < needle_len) {
-        return NULL;
-    }
-    while (haystack[i] != '\0' && i < len) {
-        if (haystack[i] == needle[j] && j < needle_len)
-            j++;
-        else
-            j = 0;
-        i++;
-        if (j == needle_len)
-            return (char *)(haystack + i - needle_len);
-    }
-    return NULL;
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+{
+	if (!*needle)
+		return ((char *)haystack);
+	while (*haystack && len)
+	{
+		if (*haystack == *needle && equal(haystack, needle, len))
+		{
+			return ((char *)haystack);
+		}
+		haystack++;
+		len--;
+	}
+	return (NULL);
 }
 
-int main() {
-    char haystack[] = "This is a sample string for testing.";
-    char needle[] = "sample";
-    size_t len = 7;  // Maximum length to search within haystack
+// int main() {
+// 	 char haystack[] = "hellooworld";
+// 	 char needle[] = "owo";
+// 	 size_t len = 10;  // Maximum length to search within haystack
 
-    char *result = ft_strnstr(haystack, needle, len);
+// 	 char *result = ft_strnstr(haystack, needle, len);
 
-    if (result != NULL) {
-        printf("Substring found at position: %ld\n", result - haystack);
-    } else {
-        printf("Substring not found within the specified length.\n");
-    }
+// 	 if (result != NULL) {
+// 		  printf("Substring found at position: %ld\n", result - haystack);
+// 	 } else {
+// 		  printf("Substring not found within the specified length.\n");
+// 	 }
 
-    return 0;
-}
+// 	 return 0;
+// }
