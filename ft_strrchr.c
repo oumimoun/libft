@@ -6,7 +6,7 @@
 /*   By: oumimoun <oumimoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 17:56:51 by oumimoun          #+#    #+#             */
-/*   Updated: 2023/11/06 12:38:46 by oumimoun         ###   ########.fr       */
+/*   Updated: 2023/11/14 19:23:12 by oumimoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 char	*ft_strrchr(const char *str, int c)
 {
-	int i;
-	char *s;
-	char c2;
-	char *result;
+	int		i;
+	char	c2;
+	char	*s;
+	char	*result;
 
 	s = (char *)str;
 	c2 = (char)c;

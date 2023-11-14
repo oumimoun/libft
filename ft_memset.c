@@ -6,7 +6,7 @@
 /*   By: oumimoun <oumimoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 18:59:10 by oumimoun          #+#    #+#             */
-/*   Updated: 2023/11/05 20:22:03 by oumimoun         ###   ########.fr       */
+/*   Updated: 2023/11/14 19:13:25 by oumimoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memset(void *ptr, int value, size_t num)
 {
-	size_t		i;
+	size_t			i;
 	unsigned char	*byte_ptr;
 
 	i = 0;

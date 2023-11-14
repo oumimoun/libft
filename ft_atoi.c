@@ -6,7 +6,7 @@
 /*   By: oumimoun <oumimoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 14:10:34 by oumimoun          #+#    #+#             */
-/*   Updated: 2023/11/05 19:18:02 by oumimoun         ###   ########.fr       */
+/*   Updated: 2023/11/14 19:11:32 by oumimoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ int	ft_atoi(char *str)
 // int main() {
 //     char *str = "        12345dsvdsf21321fsd";
 //     int value = ft_atoi(str);
-    
 //     printf("The integer value is: %d\n", value);
 
 //     return 0;

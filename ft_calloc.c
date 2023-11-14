@@ -6,7 +6,7 @@
 /*   By: oumimoun <oumimoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 14:47:57 by oumimoun          #+#    #+#             */
-/*   Updated: 2023/11/05 17:52:21 by oumimoun         ###   ########.fr       */
+/*   Updated: 2023/11/14 19:11:57 by oumimoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 void	*ft_calloc(size_t count, size_t size)
 {
 	size_t	total;
-	void			*p;
+	void	*p;
 
 	total = count * size;
 	p = malloc(total);
 	if (p == NULL)
-		return NULL;
+		return (NULL);
 	else
 		ft_bzero(p, total);
 	return (p);

@@ -6,16 +6,16 @@
 /*   By: oumimoun <oumimoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 19:52:28 by oumimoun          #+#    #+#             */
-/*   Updated: 2023/11/11 19:06:54 by oumimoun         ###   ########.fr       */
+/*   Updated: 2023/11/14 19:19:10 by oumimoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int count_str(char *str, char c)
+static int	count_str(char *str, char c)
 {
-	int i;
-	int count;
+	int	i;
+	int	count;
 
 	count = 0;
 	i = 0;
@@ -31,9 +31,9 @@ static int count_str(char *str, char c)
 	return (count);
 }
 
-static int len_str(char *str, char c)
+static int	len_str(char *str, char c)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i] && str[i] != c)
@@ -41,25 +41,24 @@ static int len_str(char *str, char c)
 	return (i);
 }
 
-static char *ft_allocated_str(char *str, char c)
+static char	*ft_allocated_str(char *str, char c)
 {
-	int len_string;
-	char *result;
+	char	*result;
+	int		len_string;
 
 	len_string = len_str(str, c);
 	result = (char *)malloc((len_string + 1) * sizeof(char));
 	if (!result)
-		return NULL;
-
+		return (NULL);
 	result[len_string] = '\0';
 	while (len_string--)
 		result[len_string] = str[len_string];
 	return (result);
 }
 
-static void ft_free(char **result)
+static void	ft_free(char **result)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (result[i])
@@ -70,20 +69,20 @@ static void ft_free(char **result)
 	free(result);
 }
 
-char	**ft_split(char const *s, char c)
+char **ft_split(char const *s, char c)
 {
-	char **result;
-	char *str;
-	char *head;
-	int i;
+	int		i;
+	char	*str;
+	char	*head;
+	char	**result;
 
 	str = ft_strdup(s);
 	if (!s || !str)
-		return NULL;
+		return (NULL);
 	head = str;
 	result = (char **)malloc((count_str(str, c) + 1) * sizeof(char *));
 	if (!result)
-		return NULL;
+		return (NULL);
 	i = 0;
 	while (*str)
 	{
@@ -108,7 +107,7 @@ char	**ft_split(char const *s, char c)
 // {
 //    //  char *str = "hello!";
 
-//     char **string = ft_split("      split       this for   me  !       ", ' ');
+//     char **string = ft_split("xxxxxxxxhello!", 'x');
 //     // int numStrings = sizeof(string) / sizeof(string[0]);
 //     int i = 0;
 

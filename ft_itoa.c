@@ -6,7 +6,7 @@
 /*   By: oumimoun <oumimoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 19:14:08 by oumimoun          #+#    #+#             */
-/*   Updated: 2023/11/12 12:03:27 by oumimoun         ###   ########.fr       */
+/*   Updated: 2023/11/14 19:12:29 by oumimoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	len_result(int n)
 
 char	*ft_itoa(int n)
 {
-	int	len;
+	int		len;
 	char	*result;
 
 	if (n == -2147483648)

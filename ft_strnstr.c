@@ -6,15 +6,15 @@
 /*   By: oumimoun <oumimoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 10:58:22 by oumimoun          #+#    #+#             */
-/*   Updated: 2023/11/06 11:59:27 by oumimoun         ###   ########.fr       */
+/*   Updated: 2023/11/14 19:22:26 by oumimoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int equal(const char *s1, const char *s2, size_t len)
+static int	equal(const char *s1, const char *s2, size_t len)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (*s1 && *s2 && len)

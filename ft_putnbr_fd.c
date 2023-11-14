@@ -6,20 +6,20 @@
 /*   By: oumimoun <oumimoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:53:00 by oumimoun          #+#    #+#             */
-/*   Updated: 2023/11/13 12:15:09 by oumimoun         ###   ########.fr       */
+/*   Updated: 2023/11/14 19:14:29 by oumimoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_putchar(char c,int fd)
+static void	ft_putchar(char c, int fd)
 {
 	write(fd, &c, 1);
 }
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-    unsigned int	i;
+	unsigned int	i;
 
 	if (n < 0)
 	{
