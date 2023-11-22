@@ -6,7 +6,7 @@
 /*   By: oumimoun <oumimoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 11:30:15 by oumimoun          #+#    #+#             */
-/*   Updated: 2023/11/14 19:12:53 by oumimoun         ###   ########.fr       */
+/*   Updated: 2023/11/21 16:51:22 by oumimoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 	if (!src && !dest)
 		return (NULL);
+	if (src == dest)
+		return (dest);
 	i = 0;
 	byte_dest = (char *)dest;
 	byte_src = (char *)src;
@@ -30,13 +32,3 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (byte_dest);
 }
-
-// int main() {
-// 	 char src[] = "This is a test.";
-// 	 char dest[16];
-// 	 ft_memcpy(dest ,src , sizeof(src));
-
-// 	 printf("dest contents: %s\n", dest);
-
-// 	 return 0;
-// }

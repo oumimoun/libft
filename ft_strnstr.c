@@ -6,7 +6,7 @@
 /*   By: oumimoun <oumimoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 10:58:22 by oumimoun          #+#    #+#             */
-/*   Updated: 2023/11/14 19:22:26 by oumimoun         ###   ########.fr       */
+/*   Updated: 2023/11/22 20:25:36 by oumimoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,19 +45,3 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (NULL);
 }
-
-// int main() {
-// 	 char haystack[] = "hellooworld";
-// 	 char needle[] = "owo";
-// 	 size_t len = 10;  // Maximum length to search within haystack
-
-// 	 char *result = ft_strnstr(haystack, needle, len);
-
-// 	 if (result != NULL) {
-// 		  printf("Substring found at position: %ld\n", result - haystack);
-// 	 } else {
-// 		  printf("Substring not found within the specified length.\n");
-// 	 }
-
-// 	 return 0;
-// }

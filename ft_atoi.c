@@ -6,17 +6,26 @@
 /*   By: oumimoun <oumimoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 14:10:34 by oumimoun          #+#    #+#             */
-/*   Updated: 2023/11/14 19:11:32 by oumimoun         ###   ########.fr       */
+/*   Updated: 2023/11/20 10:55:04 by oumimoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <limits.h>
+
+static int	check_overflow(int sign)
+{
+	if (sign == 1)
+		return (-1);
+	else
+		return (0);
+}
 
 int	ft_atoi(char *str)
 {
-	int	i;
-	int	signe;
-	int	total;
+	size_t				i;
+	int					signe;
+	unsigned long long	total;
 
 	i = 0;
 	signe = 1;
@@ -31,16 +40,10 @@ int	ft_atoi(char *str)
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
+		if (total > (9223372036854775807ULL - (str[i] - '0')) / 10)
+			return (check_overflow(signe));
 		total = total * 10 + str[i] - '0';
 		i++;
 	}
-	return (signe * total);
+	return ((int)(signe * total));
 }
-
-// int main() {
-//     char *str = "        12345dsvdsf21321fsd";
-//     int value = ft_atoi(str);
-//     printf("The integer value is: %d\n", value);
-
-//     return 0;
-// }

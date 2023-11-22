@@ -6,7 +6,7 @@
 /*   By: oumimoun <oumimoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 11:47:41 by oumimoun          #+#    #+#             */
-/*   Updated: 2023/11/14 19:13:50 by oumimoun         ###   ########.fr       */
+/*   Updated: 2023/11/16 18:23:05 by oumimoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,3 @@ void	ft_putendl_fd(char *s, int fd)
 	}
 	write(fd, "\n", 1);
 }
-
-// int main()
-// {
-//     int d = open("test3.txt", O_WRONLY | O_CREAT, 0666);
-//     ft_putendl_fd("|oussama|", d);
-//     close(d);
-// }

@@ -6,7 +6,7 @@
 /*   By: oumimoun <oumimoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 16:26:15 by oumimoun          #+#    #+#             */
-/*   Updated: 2023/11/09 19:48:25 by oumimoun         ###   ########.fr       */
+/*   Updated: 2023/11/20 14:52:55 by oumimoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		size;
 	char	*result;
 
-	size = size_toalloc(s1, set);
-	i = 0;
 	if (!set || !s1)
 		return (NULL);
+	size = size_toalloc(s1, set);
+	i = 0;
 	result = (char *)malloc(size + 1);
 	if (!result)
 		return (0);
@@ -72,15 +72,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ft_strlcpy(result, (char *)s1, size + 1);
 	return (result);
 }
-
-// int main()
-// {
-// 	char str[14] = "hello world";
-// 	char set[14] = "eh";
-// 	char *result = ft_strtrim("ab cd  f    ", " ");
-// 	int size = size_toalloc(str, set);
-// 	printf("size is: %d\n", size);
-// 	printf("result is: %s", result);
-// 	free(result);
-// 	return 0;
-// }

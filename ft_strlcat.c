@@ -6,13 +6,13 @@
 /*   By: oumimoun <oumimoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 16:04:31 by oumimoun          #+#    #+#             */
-/*   Updated: 2023/11/05 18:44:30 by oumimoun         ###   ########.fr       */
+/*   Updated: 2023/11/21 17:48:45 by oumimoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+size_t	ft_strlcat(char *dest, char *src, size_t size)
 {
 	unsigned int	i;
 	unsigned int	j;
@@ -34,11 +34,9 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	dest[j] = '\0';
 	return (lsrc + ldest);
 }
-/*
-int main(){
-	 char *dest = "Hello";
-	 char *src = "World";
-	 int total = ft_strlcat(dest, src, 5);
-	 printf("Copied string: %d\n", total);
-	 return 0;
-}*/
+// int main ()
+// {
+// 	char *str = "test";
+// 	*(str + 1) = 'a';
+// 	printf("%s", str + 1);
+// }

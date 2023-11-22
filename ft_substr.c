@@ -6,7 +6,7 @@
 /*   By: oumimoun <oumimoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 13:22:27 by oumimoun          #+#    #+#             */
-/*   Updated: 2023/11/14 19:11:21 by oumimoun         ###   ########.fr       */
+/*   Updated: 2023/11/20 14:57:52 by oumimoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (NULL);
-	if (start >= (unsigned int)ft_strlen(s) || !len || !s)
+	if (start >= (unsigned int)ft_strlen(s) || !len)
 		return (ft_strdup(""));
 	if (len + start > (unsigned int)ft_strlen(s))
 		len = (unsigned int)ft_strlen(s) - start;
@@ -29,12 +29,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	result[len] = '\0';
 	return (result);
 }
-
-// int main()
-// {
-//     // char str[] = "ouss";
-//     // unsigned int c = 1;
-//     char *result = ft_substr("hola", 2, 30);
-//     printf("|%s|", result);
-// 	free(result);
-// }

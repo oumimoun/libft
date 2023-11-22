@@ -6,7 +6,7 @@
 /*   By: oumimoun <oumimoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 19:14:08 by oumimoun          #+#    #+#             */
-/*   Updated: 2023/11/14 19:12:29 by oumimoun         ###   ########.fr       */
+/*   Updated: 2023/11/20 12:22:10 by oumimoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,13 +57,3 @@ char	*ft_itoa(int n)
 	}
 	return (result);
 }
-
-// int main()
-// {
-// 	// long d = –2147483648;
-// 	char *str = ft_itoa(-2147483648);
-// 	printf("|result is : %s|", str);
-
-// 	// unsigned int d = -1;
-//     // printf("|%u|", d);
-// }

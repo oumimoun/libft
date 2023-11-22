@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oumimoun <oumimoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/05 11:52:52 by oumimoun          #+#    #+#             */
-/*   Updated: 2023/11/20 13:54:15 by oumimoun         ###   ########.fr       */
+/*   Created: 2023/11/22 19:48:19 by oumimoun          #+#    #+#             */
+/*   Updated: 2023/11/22 19:48:23 by oumimoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *str)
+t_list	*ft_lstnew(void *content)
 {
-	int		i;
-	char	*p;
+	t_list	*ptr;
 
-	i = 0;
-	p = (char *)malloc(ft_strlen(str) + 1 * sizeof(char));
-	if (p == NULL)
-		return (NULL);
-	while (str[i] != '\0')
+	ptr = malloc(sizeof(t_list));
+	if (ptr)
 	{
-		p[i] = str[i];
-		i++;
+		ptr->content = content;
+		ptr->next = NULL;
 	}
-	p[i] = '\0';
-	return (p);
+	return (ptr);
 }

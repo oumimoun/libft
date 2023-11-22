@@ -6,13 +6,13 @@
 /*   By: oumimoun <oumimoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 18:40:31 by oumimoun          #+#    #+#             */
-/*   Updated: 2023/11/06 11:33:10 by oumimoun         ###   ########.fr       */
+/*   Updated: 2023/11/20 14:48:59 by oumimoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(const char *str)
+size_t	ft_strlen(const char *str)
 {
 	int	i;
 
@@ -21,10 +21,3 @@ int	ft_strlen(const char *str)
 		i++;
 	return (i);
 }
-
-/*
-int main(){
-	 const char *name = "pp";
-	 int leght = ft_strlen(name);
-	 printf("%d is your name", leght);
-}*/

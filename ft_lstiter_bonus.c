@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oumimoun <oumimoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/05 11:52:52 by oumimoun          #+#    #+#             */
-/*   Updated: 2023/11/20 13:54:15 by oumimoun         ###   ########.fr       */
+/*   Created: 2023/11/22 19:53:56 by oumimoun          #+#    #+#             */
+/*   Updated: 2023/11/22 19:54:00 by oumimoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *str)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	int		i;
-	char	*p;
-
-	i = 0;
-	p = (char *)malloc(ft_strlen(str) + 1 * sizeof(char));
-	if (p == NULL)
-		return (NULL);
-	while (str[i] != '\0')
+	if (!lst || !f)
+		return ;
+	while (lst)
 	{
-		p[i] = str[i];
-		i++;
+		f(lst->content);
+		lst = lst->next;
 	}
-	p[i] = '\0';
-	return (p);
 }
+
+// int main()
+// {
+//     t_list *node1 = ft_lstnew(strdup("allo"));
+//     t_list *node2 = ft_lstnew(strdup("poopo"));
+//     t_list *node3 = ft_lstnew(strdup("poopo"));
+//     (node1)->next = node2;
+//     node2->next = node3;
+
+//     ft_lstiter(node1, del);
+//     // printf("%s", node1->content);
+// }

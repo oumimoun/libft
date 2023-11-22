@@ -6,11 +6,12 @@
 /*   By: oumimoun <oumimoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 18:59:10 by oumimoun          #+#    #+#             */
-/*   Updated: 2023/11/14 19:13:25 by oumimoun         ###   ########.fr       */
+/*   Updated: 2023/11/22 12:09:29 by oumimoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 void	*ft_memset(void *ptr, int value, size_t num)
 {
@@ -26,12 +27,3 @@ void	*ft_memset(void *ptr, int value, size_t num)
 	}
 	return (byte_ptr);
 }
-/*
-int main() {
-	 char buffer[50] = "GeeksForGeeks is for programming geeks.";
-	 ft_memset(buffer + 13, '.', 8);
-
-	 printf("Buffer contents: %s\n", buffer);
-
-	 return 0;
-}*/

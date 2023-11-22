@@ -6,13 +6,13 @@
 /*   By: oumimoun <oumimoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 19:52:28 by oumimoun          #+#    #+#             */
-/*   Updated: 2023/11/14 19:19:10 by oumimoun         ###   ########.fr       */
+/*   Updated: 2023/11/20 15:33:22 by oumimoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_str(char *str, char c)
+static int	count_str(const char *str, char c)
 {
 	int	i;
 	int	count;
@@ -31,7 +31,7 @@ static int	count_str(char *str, char c)
 	return (count);
 }
 
-static int	len_str(char *str, char c)
+static int	len_str(const char *str, char c)
 {
 	int	i;
 
@@ -41,7 +41,7 @@ static int	len_str(char *str, char c)
 	return (i);
 }
 
-static char	*ft_allocated_str(char *str, char c)
+static char	*ft_allocated_str(const char *str, char c)
 {
 	char	*result;
 	int		len_string;
@@ -69,53 +69,31 @@ static void	ft_free(char **result)
 	free(result);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	int		i;
-	char	*str;
-	char	*head;
 	char	**result;
 
-	str = ft_strdup(s);
-	if (!s || !str)
+	if (!s)
 		return (NULL);
-	head = str;
-	result = (char **)malloc((count_str(str, c) + 1) * sizeof(char *));
+	result = (char **)malloc((count_str(s, c) + 1) * sizeof(char *));
 	if (!result)
 		return (NULL);
 	i = 0;
-	while (*str)
+	while (*s)
 	{
-		while (*str && (*str == c))
-			str++;
-		if (*str)
+		while (*s && (*s == c))
+			s++;
+		if (*s)
 		{
-			result[i] = ft_allocated_str(str, c);
+			result[i] = ft_allocated_str(s, c);
 			if (!result[i])
 				return (ft_free(result), NULL);
 			i++;
 		}
-		while (*str && (*str != c))
-			str++;
+		while (*s && (*s != c))
+			s++;
 	}
 	result[i] = NULL;
-	free(head);
 	return (result);
 }
-
-// int main()
-// {
-//    //  char *str = "hello!";
-
-//     char **string = ft_split("xxxxxxxxhello!", 'x');
-//     // int numStrings = sizeof(string) / sizeof(string[0]);
-//     int i = 0;
-
-//     while (string[i])
-//     {
-//         printf("|%s|\n", string[i]);
-//         i++;
-//     }
-
-//     return 0;
-// }
