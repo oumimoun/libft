@@ -6,7 +6,7 @@
 /*   By: oumimoun <oumimoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 19:49:28 by oumimoun          #+#    #+#             */
-/*   Updated: 2023/11/22 19:49:33 by oumimoun         ###   ########.fr       */
+/*   Updated: 2023/11/28 18:05:02 by oumimoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,16 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	{
 		new->next = *lst;
 		*lst = new;
+	}
+}
+int main()
+{
+	t_list *lst = NULL;
+	t_list *new = ft_lstnew(ft_strdup("hello world"));
+	ft_lstadd_front(&lst , new);
+	while (lst)
+	{
+		printf("%s", lst->content);
+		lst = lst->next;
 	}
 }

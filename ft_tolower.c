@@ -6,7 +6,7 @@
 /*   By: oumimoun <oumimoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 16:43:39 by oumimoun          #+#    #+#             */
-/*   Updated: 2023/11/14 19:23:37 by oumimoun         ###   ########.fr       */
+/*   Updated: 2023/11/23 15:46:33 by oumimoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,3 @@ int	ft_tolower(int ch)
 		return (ch - 'A' + 'a');
 	return (ch);
 }
-
-/*
-int main() {
-	 char c = 'Z';
-	 char result = ft_tolower(c);
-	 printf("%c converted to lowercase is: %c\n", c, result);
-	 return 0;
-}
-*/

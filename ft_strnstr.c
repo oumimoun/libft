@@ -6,7 +6,7 @@
 /*   By: oumimoun <oumimoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 10:58:22 by oumimoun          #+#    #+#             */
-/*   Updated: 2023/11/22 20:25:36 by oumimoun         ###   ########.fr       */
+/*   Updated: 2023/11/25 19:02:34 by oumimoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,14 @@ static int	equal(const char *s1, const char *s2, size_t len)
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
+	if (!haystack && !len)
+		return (NULL);
 	if (!*needle)
 		return ((char *)haystack);
 	while (*haystack && len)
 	{
 		if (*haystack == *needle && equal(haystack, needle, len))
-		{
 			return ((char *)haystack);
-		}
 		haystack++;
 		len--;
 	}

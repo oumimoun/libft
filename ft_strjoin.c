@@ -6,7 +6,7 @@
 /*   By: oumimoun <oumimoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 12:30:58 by oumimoun          #+#    #+#             */
-/*   Updated: 2023/11/16 18:42:38 by oumimoun         ###   ########.fr       */
+/*   Updated: 2023/11/23 15:45:00 by oumimoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	result[i + ft_strlen(s1)] = '\0';
 	return (result);
 }
-// int main()
-// {
-//     char *result = ft_strjoin(NULL, NULL);
-//     printf("result is: %s", result);
-// }

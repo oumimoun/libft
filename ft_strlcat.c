@@ -6,7 +6,7 @@
 /*   By: oumimoun <oumimoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 16:04:31 by oumimoun          #+#    #+#             */
-/*   Updated: 2023/11/21 17:48:45 by oumimoun         ###   ########.fr       */
+/*   Updated: 2023/11/24 12:54:34 by oumimoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ size_t	ft_strlcat(char *dest, char *src, size_t size)
 	unsigned int	lsrc;
 	unsigned int	ldest;
 
+	if (!dest && !size)
+		return (0);
 	ldest = ft_strlen(dest);
 	lsrc = ft_strlen(src);
 	i = 0;
@@ -34,9 +36,3 @@ size_t	ft_strlcat(char *dest, char *src, size_t size)
 	dest[j] = '\0';
 	return (lsrc + ldest);
 }
-// int main ()
-// {
-// 	char *str = "test";
-// 	*(str + 1) = 'a';
-// 	printf("%s", str + 1);
-// }
